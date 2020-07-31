@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: provider
+  freemarker:
+    prefer-file-system-access: false
+server:
+  port: 8091
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8081/eureka/,http://localhost:8082/eureka/
+  instance:
+    hostname: web
