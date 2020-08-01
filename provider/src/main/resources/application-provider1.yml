@@ -1,15 +1,11 @@
 spring:
   application:
     name: provider
-  freemarker:
-    prefer-file-system-access: false
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceNam: provider
 server:
   port: 8092
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8081/eureka/,http://localhost:8082/eureka/
-  instance:
-    hostname: admin
