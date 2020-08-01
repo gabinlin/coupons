@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: turbine
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: turbine
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration
+server:
+  port: 9010
+turbine:
+  app-config: consumer
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: default
+hystrix:
+  metrics:
+    enabled: true

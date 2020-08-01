@@ -1,10 +1,10 @@
-package top.gabin.coupons.feign;
+package top.gabin.coupons.turbine;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConsumerApplicationTests {
+class TurbineApplicationTests {
 
 	@Test
 	void contextLoads() {
