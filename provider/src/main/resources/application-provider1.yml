@@ -6,6 +6,6 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        serviceNam: provider
+        serviceName: provider
 server:
   port: 8092
