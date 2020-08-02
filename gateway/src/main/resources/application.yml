@@ -9,10 +9,14 @@ spring:
         serviceName: gateway
     gateway:
       routes:
-        - id: index
-          uri: http://localhost:9001/**
+        - id: full
+          uri: forward:/notFound
           predicates:
             - Path=/**
+        - id: index
+          uri: http://localhost:9001/index
+          predicates:
+            - Path=/index
       discovery:
         locator:
           enabled: true
@@ -20,6 +24,10 @@ server:
   port: 9021
 logging:
   level:
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
     top:
       gabin:
         coupons: DEBUG
