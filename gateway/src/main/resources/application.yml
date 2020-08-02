@@ -9,14 +9,19 @@ spring:
         serviceName: gateway
     gateway:
       routes:
-        - id: full
-          uri: forward:/notFound
-          predicates:
-            - Path=/**
         - id: index
           uri: http://localhost:9001/index
           predicates:
             - Path=/index
+          filters:
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
+        - id: full
+          uri: forward:/notFound
+          predicates:
+            - Path=/**
       discovery:
         locator:
           enabled: true
@@ -31,3 +36,6 @@ logging:
     top:
       gabin:
         coupons: DEBUG
+feign:
+  hystrix:
+    enabled: true
