@@ -18,6 +18,12 @@ spring:
               args:
                 name: fallbackcmd
                 fallbackUri: forward:/fallback
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter:
+                  replenishRate: 1
+                  burstCapacity: 2
+                key-resolver: "#{@ipKeyResolver}"
         - id: full
           uri: forward:/notFound
           predicates:
@@ -25,6 +31,10 @@ spring:
       discovery:
         locator:
           enabled: true
+  redis:
+    database: 3
+    host: 127.0.0.1
+    port: 6379
 server:
   port: 9021
 logging:
@@ -36,6 +46,7 @@ logging:
     top:
       gabin:
         coupons: DEBUG
+# 支持熔断
 feign:
   hystrix:
     enabled: true
