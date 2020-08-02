@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: gateway
+    gateway:
+      routes:
+        - id: index
+          uri: http://localhost:9001/**
+          predicates:
+            - Path=/**
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 9021
+logging:
+  level:
+    top:
+      gabin:
+        coupons: DEBUG
