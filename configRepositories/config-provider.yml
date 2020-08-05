@@ -11,10 +11,3 @@ spring:
     name: test10
 server:
   port: 8094
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  server:
-    port: 8094
