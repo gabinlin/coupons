@@ -7,5 +7,7 @@ spring:
       port: 8500
       discovery:
         serviceName: provider
+  test:
+    name: test
 server:
-  port: 8094
+  port: 8093
