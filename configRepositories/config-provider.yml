@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: provider
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: provider
+server:
+  port: 8093
