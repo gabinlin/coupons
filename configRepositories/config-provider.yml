@@ -10,4 +10,4 @@ spring:
   test:
     name: test3
 server:
-  port: 8093
+  port: 8094
