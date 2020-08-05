@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: config-server
+    config:
+      discovery:
+        enabled: true
+      server:
+        git:
+          uri: git@github.com:gabinlin/coupons.git
+          search-paths: configRepositories
+  application:
+    name: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    config:
+      name: config
+      profile: provider
+      label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        enabled: true
+        serviceName: provider
