@@ -1,11 +1,15 @@
 spring:
   application:
     name: provider
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        serviceName: provider
-server:
-  port: 8093
+  freemarker:
+    prefer-file-system-access: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
