@@ -8,4 +8,4 @@ spring:
       discovery:
         serviceName: provider
 server:
-  port: 8093
+  port: 8094
