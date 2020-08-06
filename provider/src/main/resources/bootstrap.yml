@@ -8,6 +8,8 @@ spring:
         enabled: true
         service-id: config-server
       fail-fast: true
+      username: gabin
+      password: gabin
     bus:
       enabled: true
       trace:
