@@ -16,6 +16,9 @@ spring:
         git:
           uri: git@github.com:gabinlin/coupons.git
           search-paths: configRepositories
+#          如果不想服务端自动解密，则需要设置（在客户端自己解密）
+#        encrypt:
+#          enabled: false
   application:
     name: config-server
   rabbitmq:
