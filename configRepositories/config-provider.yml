@@ -8,6 +8,6 @@ spring:
       discovery:
         serviceName: provider
   test:
-    name: test16
+    name: {cipher}a41bceda800ee5d848a94a7b49a400bab5567e19153f2b1904442ef550598af7
 server:
   port: 8094
